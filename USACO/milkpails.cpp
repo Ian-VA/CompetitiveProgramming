@@ -22,6 +22,7 @@ int main()
 
         for (int j = 0; j < m; j++){
             temp1 = (x * i) + (y * j);
+            // im sorry but it works
             allcombinations.push_back(temp1);
         }
 
