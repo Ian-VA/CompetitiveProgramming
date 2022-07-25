@@ -36,7 +36,6 @@ int main()
                 char advance_b = b[j];
 
                 if (advance_b == advance_a){
-                    i += 1;
                     break;
                 } else {
                     i += 1;
