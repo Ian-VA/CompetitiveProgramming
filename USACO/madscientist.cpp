@@ -1,51 +1,36 @@
-#include <vector>
-#include <iostream>
-#include <fstream>
-#include <cmath>
 #include <string>
-#include <algorithm>
+#include <iostream>
 
-int main()
-{
-    std::ifstream fin ("breedflip.in");
-    std::ofstream fout ("breedflip.out");
-    int n; fin >> n;
-    std::string a, b;
-    int moves = 0;
-
+int main() {
+    int ans = 0;
+    int n; 
+    std::string current, desired;
+    
     for (int i = 0; i < n; i++){
-        char j; fin >> j;
-        a.push_back(j);
+        char curr; std::cin >> curr;
+        desired.push_back(curr);
     }
-
+    
     for (int i = 0; i < n; i++){
-        char j; fin >> j;
-        b.push_back(j);
+        char curr; std::cin >> curr;
+        current.push_back(curr);
     }
+    
 
-    for (int i = 0; i < n; i++){
-        char currentchara = a[i];
-        char currentcharb = b[i];
-
-        if (currentchara == currentcharb){
-            continue;
-        } else if (currentchara != currentcharb){
-            moves += 1;
-            for (int j = i + 1; j < n; j++){
-                char advance_a = a[j];
-                char advance_b = b[j];
-
-                if (advance_b == advance_a){
-                    break;
-                } else {
-                    i += 1;
-                    continue;
-                }
-            }            
+    
+    for (int i = 0; i < n; i++) {
+        char curr_desired = desired[i]; char curr_current = current[i];
+        
+        if (curr_desired != curr_current){
+            while (curr_desired != curr_current) 
+            {
+                i++;
+            }
+            ans++;
         }
 
     }
-
-    fout << moves << "\n";
+    
+    std::cout << ans << "\n";
     
 }
