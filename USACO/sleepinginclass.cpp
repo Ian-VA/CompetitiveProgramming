@@ -1,32 +1,43 @@
-#include <iostream>
-#include <string>
-#include <vector>
+#include <bits/stdc++.h>
 
-void solve(){
-  int n; std::cin >> n;
-  std::vector<int> periods;
-  int sum = 0;
+using namespace std;
 
-  for (int i = 0; i < n; i++) {
-    int curr; std::cin >> curr;
-    periods.push_back(curr);
-    sum += curr;
-  }
-
-  for (int r = n; r >= 0; r++) {
-    if (sum % r == 0) {
-      for (int i = 0; i < n; i++) {
-        
-      }
-    }
-  }
-  
+void solve() {
+	int n;
+	cin >> n;
+	vector<int> a(n);
+	int sum_a = 0;
+	for (int i = 0; i < n; i++) {
+		cin >> a[i];
+		sum_a += a[i];
+	}
+	for (int r = n; r >= 1; r--) {
+		if (sum_a % r == 0) {
+			int targetSum = sum_a / r;
+			int curSum = 0;			
+			bool ok = true;
+			for (int i = 0; i < n; i++) {
+				curSum += a[i];
+				if (curSum > targetSum) {
+					ok = false;
+					break;
+				}
+				if (curSum == targetSum) {
+					curSum = 0;
+				}
+			}
+			if (ok) {
+				cout << n - r << endl;
+				return;
+			}
+		}
+	}
 }
 
 int main() {
-  int t; std::cin >> t;
-
-  for (int i = 0; i < t; i++) {
-    solve();
-  }
+	int t;
+	cin >> t;
+	for (int i = 0; i < t; i++) {
+		solve();
+	}
 }
