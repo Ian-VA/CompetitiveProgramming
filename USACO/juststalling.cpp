@@ -29,7 +29,7 @@ int main() {
     if (occurences >= n) {
       answer++;
     }
-  } while (next_permutation(limits.begin(), limits.end()));
+  } while (next_permutation(cows.begin(), cows.end()));
 
   std::cout << answer;
 }
