@@ -5,37 +5,46 @@
 void mix(std::vector<std::pair<int, int>> buckets) {
   int pour = 0;
   for (int i = 0; i < 100; i++) {
-
+    pour = pour % 3;
     std::pair<int, int> frombucket = buckets[pour];
-    std::pair<int, int> tobucket;
+    std::pair<int, int> tobucket = buckets[pour + 1];
 
-    if (pour % 2 == 0){
+    if (pour == 2) {
       tobucket = buckets[0];
-      pour = 0;
-    } else {
-      tobucket = buckets[pour + 1];
+    }
+
+    if (tobucket.second + frombucket.second <= tobucket.first) {
+      if (tobucket == buckets[0]) {
+        buckets[0].second += buckets[pour].second;
+        buckets[pour].second = 0;
+      } else {
+        buckets[pour + 1].second += buckets[pour].second;
+        buckets[pour].second = 0;
+      }
     }
 
     if (tobucket.second + frombucket.second > tobucket.first) {
-      for (int j = tobucket.second; j < tobucket.first; j++) {
-        buckets[pour].second++;
-        buckets[pour - 1].second--;
+
+      if (tobucket == buckets[0]) {
+        for (int j = tobucket.second; j < tobucket.first; j++) {
+          buckets[0].second++;
+          buckets[pour].second--;
+        }
+      } else {
+        for (int j = tobucket.second; j < tobucket.first; j++) {
+          buckets[pour+1].second++;
+          buckets[pour].second--;
+        }
       }
-    } else if (tobucket.second + frombucket.second <= tobucket.first) {
-      buckets[pour].second += buckets[pour - 1].second;
-      buckets[pour - 1].second = 0;
-    }
-
-    std::cout << "ITER: " << i << "FROMBUCKET: " << buckets[pour].second << " " << "TOBUCKET: " << buckets[pour + 1].second << "\n";
+    } 
     
-
     pour++;
   }
-
   for (auto i : buckets) {
     std::cout << i.second << "\n";
   }
 }
+
 
 int main() {
   std::vector<std::pair<int, int>> buckets;
