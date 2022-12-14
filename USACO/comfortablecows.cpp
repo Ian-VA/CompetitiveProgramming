@@ -17,10 +17,10 @@ int main() {
   for (int i = 0; i < n; i++) {
     int comfort = 0;
     currcows.push_back(cows[i]);
-    for (int i = 0; i < currcows.size(); i++) {
+    for (int h = 0; h < currcows.size(); h++) {
       int numcomfortablecows = 0;
       for (int j = 0; j < currcows.size(); j++) {
-        if (currcows[i].first == currcows[j].first && currcows[i] != currcows[j] || currcows[j].second == currcows[i].second && currcows[i] != currcows[j]) {
+        if (currcows[h].first == currcows[j].first && currcows[h] != currcows[j] || currcows[j].second == currcows[h].second && currcows[h] != currcows[j]) {
           numcomfortablecows++;
         }
       }
