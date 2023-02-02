@@ -6,6 +6,10 @@
 #include <queue>
 #include <string>
 
+/*
+Primary observation: Sorting the input always gets the best result
+*/
+
 
 int main() {
     std::ofstream fout("lemonade.out");
