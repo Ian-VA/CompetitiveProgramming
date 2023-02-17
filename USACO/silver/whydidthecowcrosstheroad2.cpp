@@ -8,7 +8,7 @@ int main()
     std::ofstream fout("maxcross.out");
     std::ifstream fin("maxcross.in");
 
-	int n, k, b, min = 99999; fin >> n >> k >> b;
+    int n, k, b, min = 99999; fin >> n >> k >> b;
     std::vector<bool> brokenlights(n+1, 0);
     std::vector<int> psum(n+2);
 
