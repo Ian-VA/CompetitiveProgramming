@@ -5,6 +5,8 @@
 
 typedef long long ll;
 
+// yeah
+
 int main()
 {
     ll n, sum = 0; std::cin >> n;
