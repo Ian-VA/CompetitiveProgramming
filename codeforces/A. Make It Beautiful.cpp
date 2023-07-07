@@ -15,7 +15,6 @@ bool check(std::deque<int> v) {
             return false;
         }
     }
-
     return true;
 }
 
