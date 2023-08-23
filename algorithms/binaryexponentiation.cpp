@@ -16,7 +16,7 @@ ll binpow(ll a, ll b) {
     while (b > 0) {
         if (b & 1) // if last bit is 1 (odd number)
             res = res * a;
-        a = a * a; // if last bit is even, we can square again
+        a = a * a; // square a
         b >>= 1; // right shift
     }
 
