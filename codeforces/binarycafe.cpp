@@ -9,7 +9,6 @@
 #include <bitset>
 #include <fstream>
 #include <climits>
-
 using i32 = int32_t;
 using ll = long long;
 using point = std::pair<i32, i32>;
