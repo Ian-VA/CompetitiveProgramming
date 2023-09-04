@@ -36,6 +36,4 @@ int main() {
     std::cout << comfort << "\n";
     comfort = 0;
   }
-
-
 }
