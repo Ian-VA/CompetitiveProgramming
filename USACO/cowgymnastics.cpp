@@ -2,7 +2,6 @@
 #include <vector>
 
 int main() {
-
   int k; std::cin >> k;
   int n; std::cin >> n;
   std::vector<std::vector<int>> allcows;
