@@ -8,7 +8,6 @@
 #include <queue>
 #include <bitset>
 #include <fstream>
-#include <climits>
 
 using i32 = int32_t;
 using ll = long long;
@@ -16,20 +15,21 @@ using point = std::pair<ll, ll>;
 
 int main() {
     int n; std::cin >> n;
-    std::vector<point> arr;
+    std::vector<point> tasks;
 
     for (int i = 0; i < n; i++) {
-        int a, d; std::cin >> a >> d;
-        arr.push_back({a, d});
+        int a, b; std::cin >> a >> b;
+        tasks.push_back({a, b});
     }
 
-    std::sort(arr.begin(), arr.end());
-        
-    ll curr = 0, reward = 0;
-    for (int i = 0; i < n; i++) {
-        curr += arr[i].first;
-        reward += arr[i].second-curr;
+    std::sort(tasks.begin(), tasks.end());
+    ll time = 0, reward = 0;
+
+    for (auto &i : tasks) {
+        time += i.first;
+        reward += i.second - time;
     }
 
-    std::cout << reward << "\n";
+    std::cout << reward;
 }
+
