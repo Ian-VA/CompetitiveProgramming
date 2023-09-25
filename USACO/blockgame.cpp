@@ -18,7 +18,6 @@ int main()
     }
 
     for (int i = 0; i < n; i++){
-
         for (char j = 'a'; j <= 'z'; j++){
             int occur1 = 0;
             int occur2 = 0;
