@@ -21,7 +21,6 @@ int main()
         else {
             int flag;
             std::string binary = std::bitset<32>(a).to_string();
-
             for (int i = 0; i < 32; i++) {
                 if (binary[i] == '1') {
                     flag = i;
