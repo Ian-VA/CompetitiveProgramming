@@ -29,6 +29,4 @@ int main()
     }
 
     fout << (max_size + 1);
-    
-     
 }
