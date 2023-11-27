@@ -2,7 +2,6 @@
 #include <iostream>
 #include <string>
 
-
 typedef long long ll;
 
 int main()
