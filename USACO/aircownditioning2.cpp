@@ -73,7 +73,7 @@ int main()
         for (int j = startrange; j <= endrange; j++) {
             stalls[j] += cool;
         }
-
+        
         cows.push_back(cow);
     }
 
@@ -105,7 +105,5 @@ int main()
     }
 
     std::cout << minmoney << "\n";
-
-
 
 }
